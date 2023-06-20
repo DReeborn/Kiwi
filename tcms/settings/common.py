@@ -336,6 +336,9 @@ for plugin in pkg_resources.iter_entry_points("kiwitcms.plugins"):
 
 # this is the main navigation menu
 MENU_ITEMS = [
+    (_("Search Test Cases"), reverse_lazy("testcases-search")),
+    (_("Search Test Runs"), reverse_lazy("testruns-search")),
+    (_("Search Test Plans"), reverse_lazy("plans-search")),
     (
         _("TESTING"),
         [

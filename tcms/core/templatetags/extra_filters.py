@@ -41,12 +41,15 @@ def markdown2html(md_str):
             "markdown.extensions.nl2br",
             "markdown.extensions.sane_lists",
             "markdown.extensions.tables",
+            "markdown.extensions.toc",
+            "pymdownx.blocks.details",
+            "pymdownx.details",
             "tcms.utils.markdown",
         ],
     )
 
-    html = bleach_input(rendered_md)
-    return mark_safe(html)  # nosec:B703:B308:blacklist
+    # html = bleach_input(rendered_md)
+    return mark_safe(rendered_md)  # nosec:B703:B308:blacklist
 
 
 @register.filter(name="message_icon")
