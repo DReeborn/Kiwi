@@ -44,6 +44,7 @@ def markdown2html(md_str):
             "markdown.extensions.toc",
             "pymdownx.blocks.details",
             "pymdownx.details",
+            "pymdownx.blocks.tab",
             "tcms.utils.markdown",
         ],
     )

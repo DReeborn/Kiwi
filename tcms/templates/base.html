@@ -16,41 +16,69 @@
     <title>Kiwi TCMS - {% block title %}{% trans "the leading open source test case management system" %}{% endblock %}</title>
     <style>
         details {
-            display: block;
-          }
+          display: block;
+        }
 
-          details[open] > summary::before {
-            content: "\25BC";
-          }
+        details[open] > summary::before {
+          content: "\25BC";
+        }
 
-          details summary {
-            display: block;
-            cursor: pointer;
-          }
+        details summary {
+          display: block;
+          cursor: pointer;
+        }
 
-          details summary:focus {
-            outline: none;
-          }
+        details summary:focus {
+          outline: none;
+        }
 
-          details summary::before {
-            content: "\25B6";
-            padding-right: 0.5em;
-          }
+        details summary::before {
+          content: "\25B6";
+          padding-right: 0.5em;
+        }
 
-          details summary::-webkit-details-marker {
-            display: none;
-          }
+        details summary::-webkit-details-marker {
+          display: none;
+        }
 
-          /* Attach the "no-details" class to details tags
-             in browsers that do not support them to get
-             open/show functionality. */
-          details.no-details:not([open]) > * {
-            display: none;
-          }
+        /* Attach the "no-details" class to details tags
+           in browsers that do not support them to get
+           open/show functionality. */
+        details.no-details:not([open]) > * {
+          display: none;
+        }
 
-          details.no-details:not([open]) summary {
-            display: block;
-          }
+        details.no-details:not([open]) summary {
+          display: block;
+        }
+
+        h3 {
+            padding-left: 20px;
+        }
+
+        h4 {
+            padding-left: 40px;
+        }
+
+        .sub_h4 {
+            padding-left: 40px;
+        }
+
+        h5 {
+            padding-left: 60px;
+        }
+
+        .sub_h5 {
+            padding-left: 60px;
+        }
+
+        h6 {
+            padding-left: 80px;
+        }
+
+        .sub_h6 {
+            padding-left: 80px;
+        }
     </style>
 
     {% if LANGUAGE_CODE == 'eo' %}
