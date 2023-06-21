@@ -1,0 +1,2 @@
+FROM kiwitcms/kiwi:latest
+RUN pip install pymdown-extensions
