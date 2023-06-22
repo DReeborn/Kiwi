@@ -212,6 +212,7 @@ export function unescapeHTML (html) {
         .replace(/&gt;/g, '>')
         .replace(/&quot;/g, '"')
         .replace(/&#039;/g, '\'')
+        .replace(/&#x27;/g, '\'')
     // always keep the ampersand escape last
     // to avoid chain unescape of nested values, see
     // https://github.com/kiwitcms/Kiwi/issues/2800
@@ -250,11 +251,8 @@ export function markdown2HTML (input, selector) {
     // Markdown.render returns 403 forbidden
     $(selector).html(input)
 
-    // jsonRPC('Markdown.render', unescapeHTML(input), function (result) {
-    //     $(selector).html(unescapeHTML(result))
-    // })
-    jsonRPC('Markdown.render', input, function (result) {
-        $(selector).html(result)
+    jsonRPC('Markdown.render', unescapeHTML(input), function (result) {
+        $(selector).html(unescapeHTML(result))
     })
 }
 
