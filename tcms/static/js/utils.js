@@ -250,8 +250,11 @@ export function markdown2HTML (input, selector) {
     // Markdown.render returns 403 forbidden
     $(selector).html(input)
 
-    jsonRPC('Markdown.render', unescapeHTML(input), function (result) {
-        $(selector).html(unescapeHTML(result))
+    // jsonRPC('Markdown.render', unescapeHTML(input), function (result) {
+    //     $(selector).html(unescapeHTML(result))
+    // })
+    jsonRPC('Markdown.render', input, function (result) {
+        $(selector).html(result)
     })
 }
 
