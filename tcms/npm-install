@@ -1,4 +1,4 @@
-#!/bin/bash
+##!/bin/bash ./tests/check-build: ./npm-install: /bin/bash^M: bad interpreter: No such file or directory
 
 set -e
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+##!/bin/bash ./tests/check-build: ./npm-install: /bin/bash^M: bad interpreter: No such file or directory
 
 # Build packages for distribution on PyPI
 # and execute some sanity checks on them
@@ -15,7 +15,7 @@ rm -rf tcms/node_modules/
 
 # ensure fresh translations are compiled in
 find tcms/locale/ -name "*.mo" -delete
-./manage.py compilemessages
+python ./manage.py compilemessages
 
 if [ -z "$(find -type f -name "*.mo")" ]; then
     echo "ERROR: .mo files not found"

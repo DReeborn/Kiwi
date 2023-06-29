@@ -94,13 +94,9 @@ docker-image:
 	sudo rm -rf dist/
 	docker pull registry.access.redhat.com/ubi9-minimal
 	docker build -t kiwitcms/buildroot -f Dockerfile.buildroot .
-	docker run --rm --security-opt label=disable \
-	            -v `pwd`:/host --entrypoint /bin/cp kiwitcms/buildroot \
-	            -r /Kiwi/dist/ /host/
-	docker run --rm --security-opt label=disable \
-	            -v `pwd`:/host --entrypoint /bin/cp kiwitcms/buildroot \
-	            -r /venv /host/dist/
-	docker build -t kiwitcms/kiwi:latest .
+	docker run --rm --security-opt label=disable -v `pwd`:/host --entrypoint /bin/cp kiwitcms/buildroot -r /Kiwi/dist/ /host/
+	docker run --rm --security-opt label=disable -v `pwd`:/host --entrypoint /bin/cp kiwitcms/buildroot -r /venv /host/dist/
+	docker build -t kiwitcms/kiwi_local:latest .
 	docker tag kiwitcms/kiwi:latest quay.io/kiwitcms/kiwi:latest
 
 

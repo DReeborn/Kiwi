@@ -9,6 +9,8 @@ services:
         volumes:
             - db_data:/var/lib/mysql
         restart: always
+        ports:
+            - 5555:3306
         environment:
             # checkov:skip=CKV_SECRET_6:Base64 High Entropy String
             MYSQL_ROOT_PASSWORD: kiwi-1s-aw3s0m3
@@ -21,7 +23,7 @@ services:
         depends_on:
             - db
         restart: always
-        # image: kiwitcms/kiwi:latest
+#        image: kiwitcms/kiwi_local:latest
         build:
             context: .
             dockerfile: Dockerfile_local
@@ -34,7 +36,9 @@ services:
             - ./tcms/settings:/venv/lib64/python3.9/site-packages/tcms/settings
             - ./tcms/templates:/venv/lib64/python3.9/site-packages/tcms/templates
             - ./tcms/testcases:/venv/lib64/python3.9/site-packages/tcms/testcases
+            - ./tcms/testruns:/venv/lib64/python3.9/site-packages/tcms/testruns
             - ./tcms/utils:/venv/lib64/python3.9/site-packages/tcms/utils
+            - ./tcms/static/js/bundle.js:/venv/lib64/python3.9/site-packages/tcms/static/js/bundle.js
         environment:
             KIWI_DB_HOST: db
             KIWI_DB_PORT: 3306

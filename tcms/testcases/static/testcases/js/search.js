@@ -2,7 +2,7 @@ import { initializeDateTimePicker } from '../../../../static/js/datetime_picker'
 import { dataTableJsonRPC, jsonRPC } from '../../../../static/js/jsonrpc'
 import { exportButtons } from '../../../../static/js/datatables_common'
 import {
-    escapeHTML, updateComponentSelectFromProduct, updateCategorySelectFromProduct,
+    unescapeHTML, updateComponentSelectFromProduct, updateCategorySelectFromProduct,
     updateParamsToSearchTags, updateTestPlanSelectFromProduct
 } from '../../../../static/js/utils'
 
@@ -151,7 +151,7 @@ export function pageTestcasesSearchReadyHandler () {
             {
                 data: null,
                 render: function (data, type, full, meta) {
-                    return '<a href="/case/' + data.id + '/" target="_parent">' + escapeHTML(data.summary) + '</a>'
+                    return '<a href="/case/' + data.id + '/" target="_parent">' + unescapeHTML(data.summary) + '</a>'
                 }
             },
             { data: 'create_date' },

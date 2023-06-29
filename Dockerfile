@@ -42,7 +42,7 @@ RUN sed -i "s/tcms.settings.devel/tcms.settings.product/" /Kiwi/manage.py && \
 
 
 # collect static files
-RUN /Kiwi/manage.py collectstatic --noinput --link
+RUN python /Kiwi/manage.py collectstatic --noinput --link
 
 # from now on execute as non-root
 RUN chown -R 1001 /Kiwi/ /venv/

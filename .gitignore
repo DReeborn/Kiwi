@@ -17,4 +17,4 @@ docs/target/
 .vscode/
 .cache/
 tcms/node_modules/
-tcms/static/js/bundle.js
+#tcms/static/js/bundle.js
